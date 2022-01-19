@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect, useRef } from "react";
+import NET from "vanta/dist/vanta.net.min";
+import * as THREE from "three";
 
 function App() {
+  const [Quotes, setQuotes] = useState("");
+  const [Author, setAuthor] = useState("");
+
+  const [vantaEffect, setVantaEffect] = useState(0);
+  const myRef = useRef(null);
+
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        NET({
+          el: myRef.current,
+          THREE,
+        })
+      );
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
+
+  useEffect(() => {
+    getQuote();
+  }, []);
+
+  const getQuote = () => {
+    fetch("http://quotes.stormconsultancy.co.uk/random.json")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setQuotes(data.quote);
+        setAuthor(data.author);
+      });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div className="container" ref={myRef}>
+      <div id="content" className="content">
+        <p id="quote" style={{ textAlign: "center" }}>
+          {Quotes}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p id="author" className="author">
+          {Author}
+        </p>
+        <button className="btn" onClick={() => getQuote()}>
+          New
+        </button>
+      </div>
     </div>
   );
 }

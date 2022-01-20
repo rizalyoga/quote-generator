@@ -2,7 +2,6 @@ import "./App.css";
 import React, { useState, useEffect, useRef } from "react";
 import NET from "vanta/dist/vanta.net.min";
 import * as THREE from "three";
-import load from "./assets/loading.gif";
 
 function App() {
   const [Quotes, setQuotes] = useState("");

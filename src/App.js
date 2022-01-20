@@ -37,7 +37,7 @@ function App() {
   }, []);
 
   const getQuote = () => {
-    /* ----------------------------------- OLD ---------------------------------- */
+    /* ----------------------------------- OLD API---------------------------------- */
     // fetch("http://quotes.stormconsultancy.co.uk/random.json")
     //   .then((res) => {
     //     return res.json();
@@ -53,8 +53,6 @@ function App() {
       })
       .then(function (data) {
         const index = Math.round(Math.random() * (data.length - 1));
-        // console.log(data[index].text);
-        // console.log(data[index].author);
         setQuotes(data[index].text);
         setAuthor(data[index].author);
       });
@@ -70,7 +68,7 @@ function App() {
           {Author}
         </p>
         <button className="btn" onClick={() => getQuote()}>
-          New
+          New Quote
         </button>
       </div>
     </div>

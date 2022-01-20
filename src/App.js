@@ -83,7 +83,7 @@ function App() {
               {Quotes}
             </q>
             <p id="author" className="author">
-              - {Author} -
+              - {Author ? Author : <p>unknown</p>} -
             </p>
           </>
         )}

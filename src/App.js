@@ -80,10 +80,10 @@ function App() {
         ) : (
           <>
             <q id="quote" style={{ textAlign: "center" }}>
-              {Quotes}
+              {Quotes.length > 0 ? Quotes : "  "}
             </q>
             <p id="author" className="author">
-              - {Author ? Author : <p>unknown</p>} -
+              - {Author.length > 0 ? Author : "-"} -
             </p>
           </>
         )}

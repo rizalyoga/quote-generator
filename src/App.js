@@ -37,13 +37,26 @@ function App() {
   }, []);
 
   const getQuote = () => {
-    fetch("http://quotes.stormconsultancy.co.uk/random.json")
-      .then((res) => {
-        return res.json();
+    /* ----------------------------------- OLD ---------------------------------- */
+    // fetch("http://quotes.stormconsultancy.co.uk/random.json")
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .then((data) => {
+    //     setQuotes(data.quote);
+    //     setAuthor(data.author);
+    //   });
+
+    fetch("https://type.fit/api/quotes")
+      .then(function (response) {
+        return response.json();
       })
-      .then((data) => {
-        setQuotes(data.quote);
-        setAuthor(data.author);
+      .then(function (data) {
+        const index = Math.round(Math.random() * (data.length - 1));
+        // console.log(data[index].text);
+        // console.log(data[index].author);
+        setQuotes(data[index].text);
+        setAuthor(data[index].author);
       });
   };
 

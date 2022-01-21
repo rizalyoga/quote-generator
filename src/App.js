@@ -26,6 +26,9 @@ function App() {
           // scale: 1.0,
           // scaleMobile: 1.0,
           // backgroundColor: 0x1f1f3c,
+          points: 20.0,
+          maxDistance: 26.0,
+          spacing: 13.0,
         })
       );
     }

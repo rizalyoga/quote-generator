@@ -97,19 +97,19 @@ function App() {
         </button>
       </div>
       <div className="share-btn">
-        <FacebookShareButton style={{ paddingLeft: "5px" }} url={`otesapps-rizalyoga.netlify.app`} quote={`${Quotes} \n -${Author}- \n`} hashtag="quotes">
+        <FacebookShareButton style={{ marginLeft: "5px" }} url={`https://quotesapps-rizalyoga.netlify.app`} quote={`${Quotes} \n -${Author}- \n`} hashtag="quotes">
           <FacebookIcon size={36} round />
         </FacebookShareButton>
 
-        <TwitterShareButton style={{ paddingLeft: "5px" }} url={`${Quotes} \n -${Author}- \n`} hashtags={["quotes", "quote", "katakatabijak"]}>
+        <TwitterShareButton style={{ marginLeft: "5px" }} url={`${Quotes} \n -${Author}- \n`} hashtags={["quotes", "quote", "katakatabijak"]}>
           <TwitterIcon size={36} round />
         </TwitterShareButton>
 
-        <WhatsappShareButton style={{ paddingLeft: "5px" }} title={`${Quotes}`} separator=":: ">
+        <WhatsappShareButton style={{ marginLeft: "5px" }} title={`${Quotes} \n -${Author}- \n`} separator=":: " url={"https://quotesapps-rizalyoga.netlify.app/"}>
           <WhatsappIcon size={36} round />
         </WhatsappShareButton>
 
-        <TelegramShareButton style={{ paddingLeft: "5px" }} title={"Quotes"}>
+        <TelegramShareButton style={{ marginLeft: "5px" }} title={`${Quotes} \n -${Author}- \n`} url={"https://quotesapps-rizalyoga.netlify.app/"}>
           <TelegramIcon size={36} round />
         </TelegramShareButton>
       </div>

@@ -6,6 +6,11 @@
   align-items: center;
 }
 
+.container-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .content {
   width: 450px;
   background: #252839;
@@ -49,6 +54,10 @@
 .btn:hover {
   background: linear-gradient(to right, #ff3f81, #9ab3ff);
   box-shadow: -10px 20px 50px #294bb18e, 10px 20px 50px #ff3f8198;
+}
+
+.share-btn {
+  margin-top: 2rem;
 }
 
 @media (min-width: "768px") {

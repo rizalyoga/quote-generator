@@ -87,7 +87,7 @@ function App() {
               {Quotes.length > 0 ? Quotes : "  "}
             </q>
             <p id="author" className="author">
-              - {Author.length > 0 ? Author : "-"} -
+              - {Author} -
             </p>
           </>
         )}
